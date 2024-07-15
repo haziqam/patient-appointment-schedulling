@@ -50,27 +50,27 @@ Karena terdapat banyak pasien yang akan membuat appointment dan memiliki prefere
 
 Revenue adalah pendapatan perusahaan (as simple as that). Namun pada persoalan ini, kita dapat mengasumsikan revenue adalah sebuah fungsi yang nilainya proporsional/berbanding lurus dengan kepuasan pasien (satisfaction).
 
-$
+$$
 \begin{equation}
 Revenue() \propto \sum_{patient=1}^K Satisfaction(patient, assigned\_doctor, assigned\_time\_slot)
 \end{equation}
-$
+$$
 
 > Lalu apa itu satisfaction?
 
 Pada persoalan ini, satisfaction dihitung dari kesesuaian antara dokter yang didapatkan pasien dengan preferensi serta kesesuaian time slot yang didapatkan pasien dengan preferensi
 
-$
+$$
 \begin{equation}
 Satisfaction(patient, i, j) = S_{doc}(patient, i) + S_{time}(patient, j)
 \end{equation}
-$
+$$
 
 Pada persamaan di atas, satisfaction seorang patient terhadap appointment `(i, j)` dihitung dengan tingkat kesesuaian preferensi pasien dengan dokter `i` ditambah dengan tingkat kesesuaian preferensi pasien dengan time slot `j`
 
 > Oke, sekarang lanjut ke $S_{doc}$ dan $S_{time}$. (bang udah bang 😭)
 
-$
+$$
 \begin{equation}
 S_{doc}(patient, i) = \left\{
         \begin{array}{ll}
@@ -79,9 +79,9 @@ S_{doc}(patient, i) = \left\{
         \end{array}
     \right.
 \end{equation}
-$
+$$
 
-$
+$$
 \begin{equation}
 S_{time}(patient, j) = \left\{
         \begin{array}{ll}
@@ -90,7 +90,7 @@ S_{time}(patient, j) = \left\{
         \end{array}
     \right.
 \end{equation}
-$
+$$
 
 Intinya, $S_{doc}$ dan $S_{time}$ berhubungan dengan posisi dokter dan time slot tersebut pada array preferensi pasien. Misal kita ambil contoh pasien 1 di atas.
 
@@ -124,13 +124,13 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
 
 1. Buatlah modul algoritma yang memuat fungsi/class DP, yang menerima input berupa state awal appointment dan array of patient preferences (berisi preferensi dokter dan time slot dari masing-masing pasien). Yang direturn adalah state akhir hasil asignment tiap patient dengan appointment
     - Berikut adalah contoh representasi state awal appointment
-          <div align=center>
-          <img width='300px' src="./img/state.png">
-          <br>
-          <b>Fig 3.</b> Contoh representasi state awal
-          <br>
-          </div>
-          <br>
+        <div align=center>
+        <img width='300px' src="./img/state.png">
+        <br>
+        <b>Fig 3.</b> Contoh representasi state awal
+        <br>
+        </div>
+        <br>
     - Modul ini harus benar-benar **decoupled/terpisah** dari modul lain, agar mudah melakukan testing untuk test case yang besar melalui CLI
 2. Buatlah modul otentikasi pengguna dengan akun menggunakan email dan password. Terdapat dua role akun yang harus diimplementasikan, yaitu
 
@@ -191,9 +191,6 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
     Udah tau lah ya harus ngapain 😏
 
 ## 📂 Pengerjaan dan Pengumpulan
-
-> Ini isinya guide gimana kerjainnya dan gimana ngumpulnya.
-> Kalo bisa dibuat seragam sama template ini, tapi kalo emang harus beda (misal perlu bikin laporan, atau ketentuan bot misal maksimal 5 submisi), bisa diubah aja sesuai kebutuhan.
 
 1. Buatlah repositori **private** pada github masing-masing dan invite `haziqam` dalam repositori tersebut.
 2. Berkas yang dikumpulkan berupa **link rilis tag ke repositori github** yang telah dibuat dengan ketentuan sebagai berikut.
