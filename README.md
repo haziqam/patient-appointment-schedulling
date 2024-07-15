@@ -70,27 +70,10 @@ Pada persamaan di atas, satisfaction seorang patient terhadap appointment `(i, j
 
 > Oke, sekarang lanjut ke $S_{doc}$ dan $S_{time}$. (bang udah bang 😭)
 
-$$
-\begin{equation}
-S_{doc}(patient, i) = \left\{
-        \begin{array}{ll}
-            NUM\_PREFERENCE - indexOf(i) & \quad if\  i\  in\  patient's\  doctor\  preference \\
-            0 & \quad otherwise
-        \end{array}
-    \right.
-\end{equation}
-$$
-
-$$
-\begin{equation}
-S_{time}(patient, j) = \left\{
-        \begin{array}{ll}
-            NUM\_PREFERENCE - indexOf(j) & \quad if\  j\  in\  patient's\  timeslot\  preference \\
-            0 & \quad otherwise
-        \end{array}
-    \right.
-\end{equation}
-$$
+<div align=center>
+    <img height='150px' src="./img/equation2.png">
+</div>
+<br>
 
 Intinya, $S_{doc}$ dan $S_{time}$ berhubungan dengan posisi dokter dan time slot tersebut pada array preferensi pasien. Misal kita ambil contoh pasien 1 di atas.
 
@@ -124,13 +107,13 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
 
 1. Buatlah modul algoritma yang memuat fungsi/class DP, yang menerima input berupa state awal appointment dan array of patient preferences (berisi preferensi dokter dan time slot dari masing-masing pasien). Yang direturn adalah state akhir hasil asignment tiap patient dengan appointment
     - Berikut adalah contoh representasi state awal appointment
-        <div align=center>
-        <img width='300px' src="./img/state.png">
-        <br>
-        <b>Fig 3.</b> Contoh representasi state awal
-        <br>
-        </div>
-        <br>
+      <div align=center>
+      <img width='300px' src="./img/state.png">
+      <br>
+      <b>Fig 3.</b> Contoh representasi state awal
+      <br>
+      </div>
+      <br>
     - Modul ini harus benar-benar **decoupled/terpisah** dari modul lain, agar mudah melakukan testing untuk test case yang besar melalui CLI
 2. Buatlah modul otentikasi pengguna dengan akun menggunakan email dan password. Terdapat dua role akun yang harus diimplementasikan, yaitu
 
@@ -168,7 +151,7 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
 
 1. Optimasi Memori
 
-    Salah satu kekurangan algoritma DP adalah banyaknya memori yang dibutuhkan. Buatlah optimasi yang dapat mengurangi penggunaan memori pada algoritma DP. Pengurangan penggunaan memori harus cukup signifikan dan dapat mengurangi kompleksitas ruang program. **misal:** dari $O(n^2)$ menjadi $O(n)$, atau dari $O(n)$ menjadi $O(1)$, bukan hanya menghemat beberapa byte saja.
+    Salah satu kekurangan algoritma DP adalah banyaknya memori yang dibutuhkan. Buatlah optimasi yang dapat mengurangi penggunaan memori pada algoritma DP. Pengurangan penggunaan memori harus cukup signifikan dan dapat mengurangi kompleksitas ruang program. **Misal:** dari $O(n^2)$ menjadi $O(n)$, atau dari $O(n)$ menjadi $O(1)$, bukan hanya menghemat beberapa byte saja.
 
 2. Persistent Notification
 

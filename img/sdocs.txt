@@ -1,0 +1,21 @@
+$$
+\begin{equation}
+S_{doc}(patient, i) = \left\{
+        \begin{array}{ll}
+            NUM\_PREFERENCE - indexOf(i) & \quad if\  i\  in\  patient's\  doctor\  preference \\
+            0 & \quad otherwise
+        \end{array}
+    \right.
+\end{equation}
+$$
+
+$$
+\begin{equation}
+S_{time}(patient, j) = \left\{
+        \begin{array}{ll}
+            NUM\_PREFERENCE - indexOf(j) & \quad if\  j\  in\  patient's\  timeslot\  preference \\
+            0 & \quad otherwise
+        \end{array}
+    \right.
+\end{equation}
+$$
