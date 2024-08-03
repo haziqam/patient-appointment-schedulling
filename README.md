@@ -91,7 +91,7 @@ Jadi intinya, kalian mencari arrangement/kombinasi appointment untuk setiap pasi
 
 > Kenapa harus DP? Kenapa gak FIFO aja, pasien yang duluan bisa dapet preferensi tertinggi, dan jika preferensi tertinggi sudah diambil, coba ke preferensi selanjutnya?
 
-Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjamin nilai `Revenue` yang optimal, karena begitu pasien sudah diassign, tidak dapat mundur lagi, padahal bisa saja setelah mengecek pasien lain, ternyata ada arrangement yang lebih optimal. Sebagai pekerja rumah sakit, ceritanya kita lebih mementingkan revenue dibandingkan fairness (wkwkw canda ya)
+Karena pendekatan FIFO/greedy meskipun lebih fair, tapi tidak menjamin nilai `Revenue` yang optimal, karena begitu pasien sudah diassign, tidak dapat mundur lagi, padahal bisa saja setelah mengecek pasien lain, ternyata ada arrangement yang lebih optimal. Sebagai pekerja rumah sakit, ceritanya kita lebih mementingkan revenue dibandingkan fairness (wkwkw canda ya)
 
 #### Beberapa asumsi yang dapat digunakan untuk mempermudah persoalan
 
@@ -103,17 +103,17 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
 
 ## 📝 Spesifikasi Tugas
 
-### Spesifikasi Wajib (2800 Poin)
+### Spesifikasi Wajib (Max 3000 Poin)
 
 1. Buatlah modul algoritma yang memuat fungsi/class DP, yang menerima input berupa state awal appointment dan array of patient preferences (berisi preferensi dokter dan time slot dari masing-masing pasien). Yang direturn adalah state akhir hasil asignment tiap patient dengan appointment
     - Berikut adalah contoh representasi state awal appointment
-      <div align=center>
-      <img width='300px' src="./img/state.png">
-      <br>
-      <b>Fig 3.</b> Contoh representasi state awal
-      <br>
-      </div>
-      <br>
+        <div align=center>
+        <img width='300px' src="./img/state.png">
+        <br>
+        <b>Fig 3.</b> Contoh representasi state awal
+        <br>
+        </div>
+        <br>
     - Modul ini harus benar-benar **decoupled/terpisah** dari modul lain, agar mudah melakukan testing untuk test case yang besar melalui CLI
 2. Buatlah modul otentikasi pengguna dengan akun menggunakan email dan password. Terdapat dua role akun yang harus diimplementasikan, yaitu
 
@@ -127,7 +127,7 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
         - Mengonfirmasi assignment yang dikirim oleh admin (accept/cancel)
 
 3. Buatlah modul Real-Time Communication (RTC) yang dapat mengirimkan notifikasi ke pasien yang bersangkutan apabila assignment telah ditetapkan. Setelah mendapat notifikasi, pasien akan mengonfirmasi apakah akan menyetujui (accept) atau membatalkan (cancel) appointment yang telah diassign tersebut. Seluruh appointment yang telah disetujui akan disimpan di database dan dapat dilihat pada halaman admin. Untuk menerapkan notifikasi ini, kalian memerlukan teknologi WebSocket, dan salah satu library yang dapat digunakan adalah Socket IO
-4. Data terkait dokter dan time-slot disimpan di database. Dapat diasumsikan data-data tersebut sudah fix sehingga tidak perlu membuat modul untuk CRUD dokter dan time slot untuk spesifikasi wajib. Namun pastikan kalian membuat fungsi untuk melakukan seeding database
+4. Data terkait dokter dan time-slot disimpan di database (untuk spesifikasi wajib, cukup gunakan database SQL, namun jika ingin mendapat poin bonus, boleh gunakan noSQL). Dapat diasumsikan data-data tersebut sudah fix sehingga tidak perlu membuat modul untuk CRUD dokter dan time slot untuk spesifikasi wajib. Namun pastikan kalian membuat fungsi untuk melakukan seeding database
     - Data dokter setidaknya memuat:
         - ID dokter
         - Nama dokter
@@ -147,7 +147,7 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
 7. Patient mengirimkan konfirmasi terkait appointment yang telah diassign (accept/cancel)
 8. Jika patient accept, maka data appointment akan disimpan di database dan data tersebut dapat dilihat oleh admin. Kalian bisa membuat halaman khusus untuk melihat riwayat appointment yang sudah terkonfirmasi di sisi admin
 
-### Spesifikasi Bonus (2300 Poin)
+### Spesifikasi Bonus (Max 1500 Poin)
 
 1. Optimasi Memori
 
@@ -167,7 +167,7 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
 
 5. Caching
 
-    Gunakan in-memory cache untuk menyipan data yang sering diakses ke dalam memori, agar tidak perlu terlalu sering disk access ke database. Salah satu teknologi yang dapat digunakan adalah Redis.
+    Apakah kalian sudah trauma dengan kata caching? Mari kita perdalam use-case caching pada web application. Gunakan in-memory cache untuk menyipan data yang sering diakses ke dalam memori, agar tidak perlu terlalu sering disk access ke database. Salah satu teknologi yang dapat digunakan adalah Redis.
 
 6. Docker
 
@@ -181,23 +181,25 @@ Karena pendekatan FIFO/greedy seperti itu meskipun lebih fair, tapi tidak menjam
     - **Tidak menggunakan _url shortener_** (bit.ly, shortlink, atau yang lain) saat melakukan pengumpulan _task_.
     - Anda dapat melakukan rilis dengan panduan [berikut](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
 3. **Lakukan submisi** pada website seleksi IRK dengan menggunakan akun std.stei.itb.ac.id, **lakukan konfirmasi** ke LINE `@haziq.am`, dan **jadwalkan demo** dengan cara yang sama. Lakukan hal yang sama jika membuat rilis yang baru.
-4. Jika terdapat pertanyaan dapat menghubungi LINE `@haziq.am`.
+4. Jika terdapat pertanyaan atau ada yang kurang jelas, usahakan asumsikan sendiri terlebih dahulu, karena penilaian akan lebih fleksibel, tidak seperti penilaian pada tubes. Jika masih ragu, dapat menghubungi LINE `@haziq.am`.
 
 ## 📌 Penilaian
 
 | Posisi                                                      | Poin Seleksi  |
 | ----------------------------------------------------------- | ------------- |
 | Modul DP                                                    | 1000 - 1500\* |
-| Modul auth                                                  | 300           |
+| Modul auth                                                  | 400           |
 | Modul RTC                                                   | 600           |
-| Penyimpanan Data dokter, time slot, dan riwayat appointment | 400           |
-| Bonus 1                                                     | 500           |
-| Bonus 2                                                     | 300           |
+| Penyimpanan Data dokter, time slot, dan riwayat appointment | 500           |
+| Bonus 1                                                     | 400           |
+| Bonus 2                                                     | 400           |
 | Bonus 3                                                     | 200           |
 | Bonus 4                                                     | 300           |
 | Bonus 5                                                     | 300           |
-| Bonus 6                                                     | 200           |
+| Bonus 6                                                     | 300           |
 
-\* Untuk yang melihat guide algoritma DP, maksimal point untuk modul DP hanya 1000. Silakan dipikir-pikir trade-off nya gimana. Misal 3 hari awal kalian coba kerjain webnya dulu sambil brainstorming algo DPnya. Kalo masih belum nemu, baru coba liat guide hehehe.
+\* Bagi yang melihat guide algoritma DP, maksimal poin untuk modul DP hanya 1000. Silakan dipikir-pikir trade-off nya gimana. Misal 3 hari awal kalian coba kerjain webnya dulu sambil brainstorming algo DPnya. Kalo masih belum nemu, baru coba liat guide hehehe.
+
+> Untuk bonus maksimal hanya 1500, silakan pilih bonus yang disukai.
 
 **Good Luck!**
