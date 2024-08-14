@@ -78,7 +78,7 @@ Pada persamaan di atas, satisfaction seorang patient terhadap appointment `(i, j
 Intinya, $S_{doc}$ dan $S_{time}$ berhubungan dengan posisi dokter dan time slot tersebut pada array preferensi pasien. Misal kita ambil contoh pasien 1 di atas.
 
 -   `NUM_PREFERENCE` bernilai 3, karena terdapat 3 elemen pada array preference.
--   Karena array preferensi dokter bernilai `[3, 1, 2]`, maka dokter 3 memiliki nilai $S_{doc}$ sebesar 3, lalu dokter 2 memiliki nilai $S_{doc}$ sebesar 2, lalu dokter 1 memiliki nilai $S_{doc}$ sebesar 1. Selain dari ketiga dokter tersebut memiliki nilai $S_{doc}$ sebesar 0.
+-   Karena array preferensi dokter bernilai `[3, 1, 2]`, maka dokter 3 memiliki nilai $S_{doc}$ sebesar 3, lalu dokter 1 memiliki nilai $S_{doc}$ sebesar 2, lalu dokter 2 memiliki nilai $S_{doc}$ sebesar 1. Selain dari ketiga dokter tersebut memiliki nilai $S_{doc}$ sebesar 0.
 -   Karena array preferensi time slot bernilai `[6, 7, 8]`, maka time slot 6 memiliki nilai $S_{time}$ sebesar 3, lalu time slot 7 memiliki nilai $S_{time}$ sebesar 2, lalu time slot 8 memiliki nilai $S_{time}$ sebesar 1. Selain dari ketiga time slot tersebut memiliki nilai $S_{time}$ sebesar 0.
 -   Misalkan pada kasus real, pasien tersebut diassign dengan appointment `(1, 6)` (dokter = 1, time slot = 6), maka `Satisfaction` bernilai `2 + 3 = 5`
 -   Contoh kasus lain, misal pasien tersebut diassign dengan appointment `(3, 4)` (dokter = 3, time slot = 4), maka `Satisfaction` bernilai `3 + 0 = 3`
@@ -107,13 +107,13 @@ Karena pendekatan FIFO/greedy meskipun lebih fair, tapi tidak menjamin nilai `Re
 
 1. Buatlah modul algoritma yang memuat fungsi/class DP, yang menerima input berupa state awal appointment dan array of patient preferences (berisi preferensi dokter dan time slot dari masing-masing pasien). Yang direturn adalah state akhir hasil asignment tiap patient dengan appointment
     - Berikut adalah contoh representasi state awal appointment
-        <div align=center>
-        <img width='300px' src="./img/state.png">
-        <br>
-        <b>Fig 3.</b> Contoh representasi state awal
-        <br>
-        </div>
-        <br>
+          <div align=center>
+          <img width='300px' src="./img/state.png">
+          <br>
+          <b>Fig 3.</b> Contoh representasi state awal
+          <br>
+          </div>
+          <br>
     - Modul ini harus benar-benar **decoupled/terpisah** dari modul lain, agar mudah melakukan testing untuk test case yang besar melalui CLI
 2. Buatlah modul otentikasi pengguna dengan akun menggunakan email dan password. Terdapat dua role akun yang harus diimplementasikan, yaitu
 
